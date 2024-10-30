@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css"> <!--TailwindCSS Output file link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!--Desired fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM2I+6LWRPqX3DflX6c1ZlNfE/n5tVZZ9JqAA5g" crossorigin="anonymous">
+    <!-- Some styles rquire tailwind css from the net-->
+</head>
+<body class="bg-gray-100 text-white"> <!--Need to classify the divs correctly to avoid poor styling troubling DIVS are:#navbar #-->
+    <header class="bg-black fixed top-0 left-0 right-0 flex flex-col items-center w-full mx-auto p-4 z-50 ">
+        <div class="flex justify-end w-full mb-4">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <img class="w-9" src="https://cdn-icons-png.flaticon.com/128/17246/17246520.png" alt="Login">
+                    <a href="#">Log In</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img class="w-9" src="https://cdn-icons-png.flaticon.com/128/17246/17246520.png" alt="Register">
+                    <a href="#">Register</a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="navbar" class="flex justify-between w-full items-center">
+            <div class="flex items-center gap-4">
+                <img class="w-24" src="https://s3-alpha-sig.figma.com/img/0554/d0e4/df099d539350bb44e85a9684a8fc9b12?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=V0r6vb3Ls0aHXTgccwnh2UKdugEQGzZTt0~Jzr5tJfcKKxqIiY4OS1XmkUAwlc9gsDA3V~309-Nmr6l5ZZxPWXnyMtIxtJVyS60CVE9CYsXNTgF3Z~UR4R7gR9FiKla7oxjR-KJVzzy8SDbub2HtccjJ1e3y7MhL95Y-PZTKaxTXPnlHpGBCSLTrO260nRlWyRRn4tsLHH0SW4IXm3y83pjgBEr8~285MikR0XDT2a-GUY6LvUZ1OwK5kCYmVetrsx1eyXcsS--kuCvBYmHKWeDiffXRUArxaWrgcTqE0Ggq3yh4j7JOY4aBAwYDowiampx4ucTnMl138jfgJwbbng__" alt="Logo"> <!--Need to find the right logo-->
+            </div>
+            <nav class="flex-grow flex justify-start items-center ml-10">
+                <ul class="flex items-center gap-[4vw]">
+                    <li><a class="hover:text-gray-500" href="">NEWS</a></li>
+                    <li><a class="hover:text-gray-500" href="">FIXTURES</a></li>
+                    <li><a class="hover:text-gray-500" href="">TEAM</a></li>
+                    <li><a class="hover:text-gray-500" href="">STATISTICS</a></li>
+                    <li><a class="hover:text-gray-500" href="">OUR CLUB</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <img class="w-9" src="https://cdn-icons-png.flaticon.com/128/12681/12681750.png" alt="Shop">
+                    <a class="text-yellow-500" href="#">SHOP</a>
+                </div>
+                <div class="relative flex items-center"> <!--Need to add basic functionality to serchbar-->
+                    <input 
+                        type="search"
+                        name="search" id="search" placeholder="search" class="border border-gray-300 rounded-full px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                    <button class="absolute right-2 top-2">
+                        <img class="w-6 h-6" src="https://cdn-icons-png.flaticon.com/128/1076/1076744.png" alt="Search Icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="relative h-screen bg-cover bg-center mt-24" style="background-image: url('https://s3-alpha-sig.figma.com/img/cbc2/2e23/1ddeb499687072e2865d59b7776c2fec?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RVKx8wzHcCr198uknEu0Btrt~nMa7b3ikSi7-hjBIMzOF~OnBmOI9xXT~DgefcDHg9PwR0MQzgaqFL~ZRAfIUH7kwD~jHIRY~CQrvVkbsWjDepoYkgO2QrJ4tgIfl5yc~EwbAaNtyfPb~vXr2JQPh6czKEYHSFouAhXS086qc4FJC9NTS8djbzMW8Nz-eBn7lWN0HqnmH8ze~dQfIJvWTXM4cauS2n9i0h8A45yvq~YAkZcCxAkWwfhZwX66SLVWftW4xzEDP0VeHj2b4sG0WBuXZLsdP7Rh6h-WjpA9QZpFRL8nZWZhok~8Vs30xeVE3qmHlDj2Mmb8Y2aYz9~oaA__');">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+        <div class="relative flex items-center justify-center h-full">
+            <div class="flex flex-col items-center text-center">
+                <h1 class="text-white text-4xl font-bold mb-4">Preview | Barca VS Man City</h1>
+                <div class="flex items-center gap-4">
+                    <a class="text-yellow-500" href="#">First Team</a>
+                    <p class="text-white">1hr ago</p>
+                </div>
+                <div class="container mx-auto ">
+                    <h1 class="text-center text-3xl font-bold mb-8">Our Tiles</h1>
+                    <div class="flex justify-center gap-8 ">
+                        <!-- Tile 1 -->
+                        <div class="bg-blue-950 shadow-lg rounded-lg overflow-hidden w-60 hover:bg-black">
+                            <img class="w-full h-40 object-cover" src="https://s3-alpha-sig.figma.com/img/62e2/df11/d5135d7bc23092f56c000a12ac4a0d76?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Cn73biCiJfK0camMdsdjnIkqsAQp4O9u0TLsU-5kVierpm5F4mY3C2tICbLkS9Ouxn7gxwc39tzGHld4w3jhCD-L8Q6XMWUR0ZCsPz4eW30RhBgGIQ6RrCsbt-mbc-OUrhnYEETVa5iDJxN6jaUSItgmKwRznQa-aL7tcDUnYI1t3mbuXSDPX-cO-XUU9Zwyk4qHOlrxTHhx9UZg-2Mj3kZIwMHniF12GtY9LMf-h~trTf0JuQ0FS90ZvjSzG424n7osPA5mJWdi2xP61y9n9o-5Im1~w1nna1jnd3VkIe-f7C7b1WhG-DjaiY9LnoT4~jVy2fGA28YCV3cmDYx2Dg__" alt="Tile Image 1">
+                            <div class="p-4">
+                                <h2 class="text-lg font-semibold">INSIDE VIEW:First workout in Orlando </h2>
+                                <p class="text-gray-600"> 1.</p>
+                            </div>
+                        </div>
+                        <!-- Tile 2 -->
+                        <div class="bg-blue-950 shadow-lg rounded-lg overflow-hidden w-60 hover:bg-black">
+                            <img class="w-full h-40 object-cover" src="https://s3-alpha-sig.figma.com/img/cbc2/2e23/1ddeb499687072e2865d59b7776c2fec?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RVKx8wzHcCr198uknEu0Btrt~nMa7b3ikSi7-hjBIMzOF~OnBmOI9xXT~DgefcDHg9PwR0MQzgaqFL~ZRAfIUH7kwD~jHIRY~CQrvVkbsWjDepoYkgO2QrJ4tgIfl5yc~EwbAaNtyfPb~vXr2JQPh6czKEYHSFouAhXS086qc4FJC9NTS8djbzMW8Nz-eBn7lWN0HqnmH8ze~dQfIJvWTXM4cauS2n9i0h8A45yvq~YAkZcCxAkWwfhZwX66SLVWftW4xzEDP0VeHj2b4sG0WBuXZLsdP7Rh6h-WjpA9QZpFRL8nZWZhok~8Vs30xeVE3qmHlDj2Mmb8Y2aYz9~oaA__" alt="Tile Image 2">
+                            <div class="p-4">
+                                <h2 class="text-lg font-semibold">Welcome event in Orlando 2</h2>
+                                <p class="text-yellow-500">CLUB 2.</p>
+                            </div>
+                        </div>
+                        <!-- Tile 3 -->
+                        <div class="bg-blue-950 shadow-lg rounded-lg overflow-hidden w-60 hover:bg-black">
+                            <img class="w-full h-40 object-cover" src="https://s3-alpha-sig.figma.com/img/bd2f/f616/efd4eb9094490191b7796a38681d0430?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=f901bSmeEuUgN~pSil0-76lq57uP~3iLkY6mVMnsiM7KCIYEQPX6KiJjbJc-ASl1ZQnTKAWnikCdf11EGa3zYY~Y2Pa56MTL6Gjyk-O3m7jDM9ihxhmelGkuVcmHEMivmVPOVQQkZHx~Y9Qhr3vqWqJ1pbFAV~5jHXPsDSp88C2wVtYkvXjnjmSMgKprmfDqjvfMsmHNLjI3Tabtz-vutOQhTuArh8Hz474jq89VgBelHiY9MxArYaeP-iiIW1fxIRHJmlYXKYl7Z3c6d22oYd6pj3hPqSBhjXvviyCj~KTFH~DZoVYO71sgTVQS54nb5NQOy6y4Ac-KiqpcAzJ~hw__" alt="Tile Image 3">
+                            <div class="p-4">
+                                <h2 class="text-lg font-semibold">Chemezi Metu Joins the team</h2>
+                                <p class="text-yellow-500">BASKETBALL 3.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- First page tab-->
+    <div class="relative h-screen bg-cover bg-center mb-10" style="background-color:rgb(86, 76, 18);">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+        <div class="relative flex items-center justify-center h-full flex-col">
+            <div class="bg-white flex justify-center flex-col">
+                <div class="bg-gray-200 p-2 rounded-t-lg">
+                    <span class="gradient-text">Muranga's First Team</span> 
+                    <div class=" flex justify-center text-black">
+                        <span class="">Next Match</span>
+                        <div class="flexcol mx-3">
+                            <div>
+                                <span class="gradient-text">00: </span>
+                            </div>
+                            <div>
+                                <p>DAYS</p>
+                            </div>
+                        </div>
+                        <div class="flexcol mx-3">
+                            <div>
+                                <span class="gradient-text">11: </span>
+                            </div>
+                            <div>
+                                <p>HOURS</p>
+                            </div>
+                        </div>
+                        <div class="flexcol mx-3">
+                            <div>
+                                <span class="gradient-text">46: </span>
+                            </div>
+                            <div>
+                                <p>MINS</p>
+                            </div>
+                        </div>
+                        <div class="flexcol mx-3">
+                            <div>
+                                <span class="gradient-text">21 </span>
+                            </div>
+                            <div>
+                                <p>SECS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex ">
+                    <!-- Left Panel -->
+                    <div class="w-64 bg-white p-4 flex flex-col items-center">
+                        <button class="bg-yellow-500 text-white text-xl w-72 h-72 flex items-center justify-center rounded-lg mb-4">
+                            View All Results
+                        </button>
+                    </div>
+            
+                    <!-- Sliding Pane -->
+                    <div class="flex-1 overflow-hidden relative ">
+                        <div class="flex transition-transform duration-300 ease-in-out" id="slider">
+                            <!-- Window 1 -->
+                            <div class="min-w-full p-4">
+                                <div class="bg-white p-4 rounded-lg shadow-lg">
+                                    <div class="bg-black text-white p-2 rounded-t-lg gradient-border">
+                                        <span class="text-left">2024-10-29</span>
+                                    </div>
+                                    <div class="flex justify-center items-center mt-4">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824727.png" alt="Image 1" class="w-24 h-24 mx-4"> <!-- Added margin -->
+                                        
+                                        <div class="flex justify-items-center flex-col gap-2 text-black "> <!-- Added margin for spacing -->
+                                            <p class=" font-light flex gap-1">KICK OFF CEST</p>
+                                            <span class="gradient-text">12:00</span>
+                                            <h1 class="gap-3">FC Barcelona VS Man City</h1>
+                                            <p class="gap-3">Camping World Stadium</p>
+                                            <div class="p-4 flex flex-col items-center">
+                                                <button class="bg-yellow-500 w-36 h-12 text-white text-xl  flex items-center justify-center rounded-sm mb-4">
+                                                    TICKETS
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824726.png" alt="Image 2" class="w-24 h-24 mx-4"> <!-- Added margin -->
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="min-w-full p-4">
+                                <div class="bg-white p-4 rounded-lg shadow-lg">
+                                    <div class=" bg-black text-white p-2 rounded-t-lg gradient-border">
+                                        <span class="text-white text-left">2024-10-29</span>
+                                    </div>
+                                    <div class="flex justify-center items-center mt-4">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824727.png" alt="Image 1" class="w-24 h-24">
+                                        <div class="flex justify-items-center flex-col gap-2 text-black "> <!-- Added margin for spacing -->
+                                            <p class=" font-light flex gap-1">KICK OFF CEST</p>
+                                            <span class="gradient-text">12:00</span>
+                                            <h1 class="gap-3">FC Barcelona VS Man City</h1>
+                                            <p class="gap-3">Camping World Stadium</p>
+                                            <div class="p-4 flex flex-col items-center">
+                                                <button class="bg-yellow-500 w-36 h-12 text-white text-xl  flex items-center justify-center rounded-sm mb-4">
+                                                    TICKETS
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824719.png" alt="Image 2" class="w-24 h-24">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="min-w-full p-4">
+                                <div class="bg-white p-4 rounded-lg shadow-lg">
+                                    <div class="bg-black text-white p-2 rounded-t-lg gradient-border">
+                                        <span class="text-white text-left">2024-10-29</span>
+                                    </div>
+                                    <div class="flex justify-center items-center mt-4">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824724.png" alt="Image 1" class="w-24 h-24">
+                                        <div class="flex justify-items-center flex-col gap-2 text-black "> <!-- Added margin for spacing -->
+                                            <p class=" font-light flex gap-1">KICK OFF CEST</p>
+                                            <span class="gradient-text">12:00</span>
+                                            <h1 class="gap-3">FC Barcelona VS Man City</h1>
+                                            <p class="gap-3">Camping World Stadium</p>
+                                            <div class="p-4 flex flex-col items-center">
+                                                <button class="bg-yellow-500 w-36 h-12 text-white text-xl  flex items-center justify-center rounded-sm mb-4">
+                                                    TICKETS
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824734.png" alt="Image 2" class="w-24 h-24">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="min-w-full p-4">
+                                <div class="bg-white p-4 rounded-lg shadow-lg">
+                                    <div class="bg-black text-white p-2 rounded-t-lg gradient-border">
+                                        <span class="text-white tetx-left">2024-10-29</span>
+                                    </div>
+                                    <div class="flex justify-center items-center mt-4">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824747.png" alt="Image 1" class="w-24 h-24">
+                                        
+                                        <div class="flex justify-items-center flex-col gap-2 text-black "> <!-- Added margin for spacing -->
+                                            <p class=" font-light flex gap-1">KICK OFF CEST</p>
+                                            <span class="gradient-text">12:00</span>
+                                            <h1 class="gap-3">FC Barcelona VS Man City</h1>
+                                            <p class="gap-3">Camping World Stadium</p>
+                                            <div class="p-4 flex flex-col items-center">
+                                                <button class="bg-yellow-500 w-36 h-12 text-white text-xl  flex items-center justify-center rounded-sm mb-4">
+                                                    TICKETS
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824720.png" alt="Image 2" class="w-24 h-24">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="min-w-full p-4">
+                                <div class="bg-white p-4 rounded-lg shadow-lg">
+                                    <div class="bg-black text-white p-2 rounded-t-lg gradient-border">
+                                        <span class="text-white text-left">2024-10-29</span>
+                                    </div>
+                                    <div class="flex justify-center items-center mt-4">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824743.png" alt="Image 1" class="w-24 h-24">
+                                        <div class="flex justify-items-center flex-col gap-2 text-black"> <!-- Added margin for spacing -->
+                                            <p class=" font-light flex gap-1">KICK OFF CEST</p>
+                                            <span class="gradient-text">12:00</span>
+                                            <h1 class="gap-3">FC Barcelona VS Man City</h1>
+                                            <p class="gap-3">Camping World Stadium</p>
+                                            <div class="p-4 flex flex-col items-center">
+                                                <button class="bg-yellow-500 w-36 h-12 text-white text-xl  flex items-center justify-center rounded-sm mb-4">
+                                                    TICKETS
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <img src="https://cdn-icons-png.flaticon.com/128/824/824748.png" alt="Image 2" class="w-24 h-24">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more windows as needed -->
+                        </div>
+            
+                        <!-- Navigation Buttons -->
+                        <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">❮</button>
+                        <button id="next" class="absolute top-1/2 right-10 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">❯</button>
+                    </div>
+                </div>
+            </div>
+            <!---SEAL TICKETS-->
+            <div class="bg-white flex justify-center flex-col mt-20 w-full mb-40"><!---SEAL TICKETS-->
+                <div class="flex flex-col justify-center">
+                    <div class="text-center">
+                        <h1 class="gradient-text text-center">Murang'a Seal Tickets</h1>
+                    </div>
+                    <div class="flex justify-center mt-2">
+                        <div class="relative w-96 h-60 bg-image rounded-lg mx-10 ">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75 "></div>
+                            
+                        </div>
+                        <div class="relative w-96 h-60 bg-image rounded-lg mx-10">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"></div>
+                           
+                        </div>
+                        <div class="relative w-96 h-60 bg-imagef rounded-lg mx-10">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"></div>
+                            
+                        </div>
+                    </div>
+                    <div class="flex justify-center mx-5">
+                        <div class="relative w-96 h-60 bg-image rounded-lg mt-10">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---SEAL STORE-->
+            
+        </div>
+    </div>
+    <div class="relative h-screen bg-cover bg-center  " style="background-color:rgb(86, 76, 18);">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+        <div class="relative flex items-center justify-center h-full flex-col">
+            <div class="flex-col justify-centre bg-white w-full">
+                <div class="mb-10">
+                    
+                    <div>
+                        <h1 class="gradient-text text-center">Murang'a Seal Store</h1>
+                    </div>
+                    <div class="absolute right-16">
+                        <button class="bg-black text-white  rounded-sm button-set">OFFICIAL STORE MURANG'A SEAL</button>
+                    </div>
+                </div>
+                <div class="container mx-20 text-black">
+                    <div class="flex justify-center gap-8 ">
+                        <!-- Tile 1 -->
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-96 h-96 tile-layout">
+                            <img class="w-full h-40 object-cover" src="https://s3-alpha-sig.figma.com/img/b505/7a55/77d8fb168717c10fa21c6c36f0dc973f?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cLqm8D55FcFNo1wSekGXvh9LKAVyiC5msa1lPk9x7junzaM5RrqVG9PsC53l46djtAy~43XNWhjzewB63vQmIt4SWIneZmeEmQFJRb3Q3WjtqPH2wanPwKffORJmYC2RaGdwsyiEvrt45g~UC~80s0oo88UuhtbNhRSYHk1Bszl8Smx61YCRmgzc99AQJH7GkmWz4CaolSMyU6ETrKTmGmcVZMmDCHdoZecSFhtP7bBFDyORz3t9tkmsU7ScW6eXxMJ5MlKZ92-D9C~A4FNAMtSowp0Jcj66RYcM9vErq~6Rhj3NRRVXRfzV7F-18dJJ7kJSZDnllMa0vVby3vR1Gw__" alt="Tile Image 1">
+                            <div class="p-4 flex">
+                              <div class="flex-1">
+                                <img src="https://s3-alpha-sig.figma.com/img/db2d/7557/c8619d69aed3f9258967268aff65290e?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5EJucunbsBOLdcBpVBAtP2FoEshWDJAx5cXqSdnLZTjLWbYilDC2JYjoy2csW5hjAlj5seHSaHGwr~Jiy04xPuQKSonFviS4w3DGrR~JROwBl0GFxPdQBb9k~qsfRp4WqDB2hgVHWS7MOL2cHDgUdgVQCMojHBxOTcJ4Nacuq-IoNlAGyPx6EJvvdeIt4HLe7TUUj819QORanueSzbqyU~7aF8iCgbFQ6AUhSqGItjrkMI31XK5Dped6UTSgiA5kdZTRspBRVYmxq3pF-1WrqiqMeuJoGH8kei1VCkkZJFkze-3aTkIjRtM5RlGjbnD6LV6YWLfs84VQN96AB2Guw__" alt="Image 1" class="w-120 h-160">
+                              </div>
+                              <div class="flex-1 flex flex-col justify-end text-right">
+                                <h1 class="text-xl font-bold mb-2">NEW KIT</h1>
+                                <p class="mb-2">We already have it here! Get the new 2024-2025 kit and be the first to</p>
+                                <div>
+                                  <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                    <span class="italic text-black">SHOP NOW</span>
+                                    <img src="Vector" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- Tile 2 -->
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-96 h-96">
+                            <img class="w-full h-40 object-cover" src="https://s3-alpha-sig.figma.com/img/b603/a46a/425459eb705aeab341ae5896b1ff3b8c?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UAkr82yJprLuaGwetckQQo7gjNnj6Y4jAfx6L~aVlCrlBmEX9vIRYPUVfySIZ~k-rCm1RopD0aO4yhphOFoLiBBmPdHJ1pCmY6ZxE8Tbl5fIgnRJdp15oDn1~ZpnuDnUV783iRkQSxiOIHyvm8UrUbGjbfpam9txN3LZVfbSxWeQqc2iCynQ~yB2TRcCphiDI4apql1DH33Iz8G5aUu-QeX-alUu~nWkaMlo6QJiqlNvehiwzxNFPytDMMHjRbLsn-XbOTcKVwTjJhpMi6Qg~CsNJLOgdyfK1NFR86YF20X00EG2nGav3DOtzzTBeY05CGpTSjRIKlqJgqhJwUiwDg__" alt="Tile Image 1">
+                            <div class="p-4 flex">
+                              <div class="flex-1">
+                                <img src="https://s3-alpha-sig.figma.com/img/d487/952a/d1b939e3e24d7a3f96e98a2c88d69697?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ogmlu4Fv0P-CMIAWnsQlRM~VhENTWc0GeSKh2h519RnH-RrPeSfNuU9n7udYag7Vxu9YmdxXxhP1ul9NFLZMSNlBZUXyzT4sqpg2ztlRZJX85xzU1pCW4bNfBiIcteFDhBBAIQzBEAfCbsyB4eFznnAwmAkH5mZ0Vs1O05xRmqaQ0rHPA7sPl3urr5ASsty1iHaVyKav-0pVMJ3XBP4VXQw2V6-SHfdaArLdrnOwzuHRLX0q4F9lIUUyUIazsdgVV0QMj1g954e1Kq1yoXmUfPSzoLOAXOZQHeePddebcSU4pw3ZE-tAL3K~vKU9Aiz43NUdL2i8NhcMmbipKLtGcg__" alt="Image 1" class="w-120 h-160">
+                              </div>
+                              <div class="flex-1 flex flex-col justify-end text-right">
+                                <h1 class="text-xl font-bold mb-2">NEW KIT</h1>
+                                <p class="mb-2">We already have it here! Get the new 2024-2025 kit and be the first to</p>
+                                <div>
+                                  <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                    <span class="italic text-black">SHOP NOW</span>
+                                    <img src="https://cdn-icons-png.flaticon.com/128/4436/4436481.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- Tile 3 -->
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-96 h-96 ">
+                            <img class="w-full h-40 object-cover" src="https://s3-alpha-sig.figma.com/img/2fc6/4cb8/a8415d3e36fc1fc1cbfeb34792fca6d7?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JDuyta6P0Lej7Nk3Aeip4jeVpFnbckx0NR4Hfd5Oaks9TzhNHQJ9m2bV7kvWGAexTqRTBOVXn7LH-ZGAfSUlkoOK33JMctXsWx-TXgBIN24okENVETJHmPTYa~8PI65UgZQRckwapy1Uy61p~9rVyzNlh7kwvnY-EJI8ttdFnlrn6X65qYO7CzeAXfXQzQ8zCf1OVJbubs0Uh86fb0z6aoQlrXvNttxdrXyBafcnK8gCdmj~MHQ4A9v5vp3RfuXxs5dQ2zqXTucLqqPx2EZTZabHhboXXzkQMioOLKeZOxbBXVIzlRtoVcog-R5-n~V-3PfZ0onvvF42g6iYsiJjRw__" alt="Tile Image 1">
+                            <div class="p-4 flex">
+                              <div class="flex-1">
+                                <img src="https://s3-alpha-sig.figma.com/img/2833/9735/7a67770563da39f3ab667bab841a82ba?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HNFRe-dXLkB93iRml80iJFTIcNVMhVmsVXGXnG1lf3nBtaiEWFP4QN6x-oRly8uS9sxItSgezZT55mvfv4Ou-4blI0X9dn1dnjSWnN5AKDRkdammvtbQ~~HKJwhm~ltbGAKO5pNKhpzaKM5FBbnStR2sJdg06sluu698ws6vs7txGX3F6-DMGRtlQ4bFjZUyon7FEG-rc40oIraRCkcCRfcIVO3vBxv2LLLNbeQRpB4t9-QxrDD7qFuLTTyxNGCDTANuf8qqnWiJsoBR~K1Wf40CasVO9Fv-DVX0GqJNUlqtKuvOiaXPND9tFB0QmYXTwuTXtBvCymK-hPbaF8JDVw__" alt="Image 1" class="w-120 h-160">
+                              </div>
+                              <div class="flex-1 flex flex-col justify-end text-right">
+                                <h1 class="text-xl font-bold mb-2">NEW KIT</h1>
+                                <p class="mb-2">We already have it here! Get the new 2024-2025 kit and be the first to</p>
+                                <div>
+                                  <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                    <span class="italic text-black">SHOP NOW</span>
+                                    <img src="https://cdn-icons-png.flaticon.com/128/4436/4436481.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- Tile 4 -->
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-96 h-96 ">
+                            <img class="w-full h-40 object-cover" src="https://s3-alpha-sig.figma.com/img/484a/0010/dac8e1308c1870036ddb723f38780f08?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OomKMGBVs3iCyHp0dTcZxtp4U6AxnYGKn3ZuKBYXianDV9IFQd86ToAZL0g2wVBFaU4jsLBgQpL~VilUIYIl0lhqDhtFZ~jqLIBF80Cw4xcjETym4bSQ-vf3E247y~TJXoXSb6fe0kzedKpjWMlk8GheyTbAXDFGV7xbOBNDy5YKySXr4365babgeHe9H6Uu4NUNpdhOjN1BvmlfA-8mtJE6t2lDL8p8l10c960BMAthdlI-wKurV~F~1pcks8C2eKgBYbPmt1GzdG9h~LahwZ2dkydUpGmgd3OBvfz87jQGghG2aiU0ehzxo3-kgzlTFDWg17EUjZ7828UI150bHg__" alt="Tile Image 1">
+                            <div class="p-4 flex">
+                              <div class="flex-1">
+                                <img src="https://s3-alpha-sig.figma.com/img/1456/aa6e/55c4d6c95cf09920e3a5aca33f1ab93d?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JAUoSpP2efDsl~kwlANBn-k8Hmklg04IO4GqzALI~9Kd0bB98vIP8fPAqD9dNU5V3pkim3dk147p-yaUaqayq8QRhZePyi5vRbNjgJSkXzD4F3D7PzyE5qt9DaXkOsMNXgB9FxbMtXW6CAHHRdDcYa8t47DKZW6phMkrvd4dRSCvksXCx9RGT~H~N1ZNQYtio7HKRmnSDyWEUvT5~sEDIoFhrBbEZ6WVNZoPMKAQF9OpwmF2SoyCsBgi1~qLccCK5s~SvV6BRPdqhVnGHF7mrEslyOVyWp3EV68EPrZdPknuw3Istfwcu7KTsPdm9ajoLeomZP48Q0~eCHzkY7DNGg__" alt="Image 1" class="w-120 h-160">
+                              </div>
+                              <div class="flex-1 flex flex-col justify-end text-right">
+                                <h1 class="text-xl font-bold mb-2">NEW KIT</h1>
+                                <p class="mb-2">We already have it here! Get the new 2024-2025 kit and be the first to</p>
+                                <div>
+                                  <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                    <span class="italic text-black">SHOP NOW</span>
+                                    <img src="https://cdn-icons-png.flaticon.com/128/4436/4436481.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            <!--SEAL NEWS-->
+            <div class="flex-col justify-centre bg-white w-full mt-20">
+                <div class="mb-10">
+                    
+                    <div>
+                        <h1 class="gradient-text text-center">Murang'a Seal NEWS</h1>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="container mx-20 text-black justify-center">
+                            <div class="flex justify-center gap-8 ">
+                                <!-- Tile 1 -->
+                                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-72 h-72  tile-layout">
+                                    <img class="w-full object-cover" src="https://s3-alpha-sig.figma.com/img/b505/7a55/77d8fb168717c10fa21c6c36f0dc973f?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cLqm8D55FcFNo1wSekGXvh9LKAVyiC5msa1lPk9x7junzaM5RrqVG9PsC53l46djtAy~43XNWhjzewB63vQmIt4SWIneZmeEmQFJRb3Q3WjtqPH2wanPwKffORJmYC2RaGdwsyiEvrt45g~UC~80s0oo88UuhtbNhRSYHk1Bszl8Smx61YCRmgzc99AQJH7GkmWz4CaolSMyU6ETrKTmGmcVZMmDCHdoZecSFhtP7bBFDyORz3t9tkmsU7ScW6eXxMJ5MlKZ92-D9C~A4FNAMtSowp0Jcj66RYcM9vErq~6Rhj3NRRVXRfzV7F-18dJJ7kJSZDnllMa0vVby3vR1Gw__" alt="Tile Image 1">
+                                    <div class="p-4 flex">
+                                        <div class="flex-1 flex flex-col justify-center ">
+                                            <p class="mb-2">Spain Men in Basketball and Footbal action</p>
+                                            <div class="flex justify-start w-5 h-6">
+                                                <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/17375/17375268.png" alt="Sell Icon" class="w-3 h-3 ml-2">
+                                                    <span class="italic text-yellow-500 font:2px"> CLUB</span>
+                                                </a>
+                                                </div>
+                                            <div class="flex justify-end">
+                                            <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/992/992700.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                                <span class="italic text-black mx-2"> 3 hrs ago</span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tile 2 -->
+                                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-72 h-72 ">
+                                    <img class="w-full object-cover" src="https://s3-alpha-sig.figma.com/img/b603/a46a/425459eb705aeab341ae5896b1ff3b8c?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UAkr82yJprLuaGwetckQQo7gjNnj6Y4jAfx6L~aVlCrlBmEX9vIRYPUVfySIZ~k-rCm1RopD0aO4yhphOFoLiBBmPdHJ1pCmY6ZxE8Tbl5fIgnRJdp15oDn1~ZpnuDnUV783iRkQSxiOIHyvm8UrUbGjbfpam9txN3LZVfbSxWeQqc2iCynQ~yB2TRcCphiDI4apql1DH33Iz8G5aUu-QeX-alUu~nWkaMlo6QJiqlNvehiwzxNFPytDMMHjRbLsn-XbOTcKVwTjJhpMi6Qg~CsNJLOgdyfK1NFR86YF20X00EG2nGav3DOtzzTBeY05CGpTSjRIKlqJgqhJwUiwDg__" alt="Tile Image 1">
+                                    <div class="p-4 flex">
+                                        <div class="flex-1 flex flex-col justify-center ">
+                                            <p class="mb-2">Spain Men in Basketball and Footbal action</p>
+                                            <div class="flex justify-start w-5 h-6">
+                                                <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/17375/17375268.png" alt="Sell Icon" class="w-3 h-3 ml-2">
+                                                    <span class="italic text-yellow-500 font:2px"> CLUB</span>
+                                                </a>
+                                                </div>
+                                            <div class="flex justify-end">
+                                            <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/992/992700.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                                <span class="italic text-black mx-2"> 3 hrs ago</span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tile 3 -->
+                                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-72 h-72 ">
+                                    <img class="w-full object-cover" src="https://s3-alpha-sig.figma.com/img/2fc6/4cb8/a8415d3e36fc1fc1cbfeb34792fca6d7?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JDuyta6P0Lej7Nk3Aeip4jeVpFnbckx0NR4Hfd5Oaks9TzhNHQJ9m2bV7kvWGAexTqRTBOVXn7LH-ZGAfSUlkoOK33JMctXsWx-TXgBIN24okENVETJHmPTYa~8PI65UgZQRckwapy1Uy61p~9rVyzNlh7kwvnY-EJI8ttdFnlrn6X65qYO7CzeAXfXQzQ8zCf1OVJbubs0Uh86fb0z6aoQlrXvNttxdrXyBafcnK8gCdmj~MHQ4A9v5vp3RfuXxs5dQ2zqXTucLqqPx2EZTZabHhboXXzkQMioOLKeZOxbBXVIzlRtoVcog-R5-n~V-3PfZ0onvvF42g6iYsiJjRw__" alt="Tile Image 1">
+                                    <div class="p-4 flex">
+                                        <div class="flex-1 flex flex-col justify-center ">
+                                            <p class="mb-2">Spain Men in Basketball and Footbal action</p>
+                                            <div class="flex justify-start w-5 h-6">
+                                                <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/17375/17375268.png" alt="Sell Icon" class="w-3 h-3 ml-2">
+                                                    <span class="italic text-yellow-500 font:2px"> CLUB</span>
+                                                </a>
+                                                </div>
+                                            <div class="flex justify-end">
+                                            <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/992/992700.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                                <span class="italic text-black mx-2"> 3 hrs ago</span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tile 4 -->
+                                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-72 h-72">
+                                    <img class="w-full object-cover" src="https://s3-alpha-sig.figma.com/img/484a/0010/dac8e1308c1870036ddb723f38780f08?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OomKMGBVs3iCyHp0dTcZxtp4U6AxnYGKn3ZuKBYXianDV9IFQd86ToAZL0g2wVBFaU4jsLBgQpL~VilUIYIl0lhqDhtFZ~jqLIBF80Cw4xcjETym4bSQ-vf3E247y~TJXoXSb6fe0kzedKpjWMlk8GheyTbAXDFGV7xbOBNDy5YKySXr4365babgeHe9H6Uu4NUNpdhOjN1BvmlfA-8mtJE6t2lDL8p8l10c960BMAthdlI-wKurV~F~1pcks8C2eKgBYbPmt1GzdG9h~LahwZ2dkydUpGmgd3OBvfz87jQGghG2aiU0ehzxo3-kgzlTFDWg17EUjZ7828UI150bHg__" alt="Tile Image 1">
+                                    <div class="p-4 flex">
+                                        <div class="flex-1 flex flex-col justify-center ">
+                                            <p class="mb-2">Spain Men in Basketball and Footbal action</p>
+                                            <div class="flex justify-start w-5 h-6">
+                                                <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/17375/17375268.png" alt="Sell Icon" class="w-3 h-3 ml-2">
+                                                    <span class="italic text-yellow-500 font:2px"> CLUB</span>
+                                                </a>
+                                                </div>
+                                            <div class="flex justify-end">
+                                            <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/992/992700.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                                <span class="italic text-black mx-2"> 3 hrs ago</span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div> <!--Column2 has margin top-->
+                        <div class="container mx-20 text-black mt-5">
+                            <div class="flex justify-center gap-8 ">
+                                <!-- Tile 1 -->
+                                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-72 h-72  tile-layout">
+                                    <img class="w-full object-cover" src="https://s3-alpha-sig.figma.com/img/b505/7a55/77d8fb168717c10fa21c6c36f0dc973f?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cLqm8D55FcFNo1wSekGXvh9LKAVyiC5msa1lPk9x7junzaM5RrqVG9PsC53l46djtAy~43XNWhjzewB63vQmIt4SWIneZmeEmQFJRb3Q3WjtqPH2wanPwKffORJmYC2RaGdwsyiEvrt45g~UC~80s0oo88UuhtbNhRSYHk1Bszl8Smx61YCRmgzc99AQJH7GkmWz4CaolSMyU6ETrKTmGmcVZMmDCHdoZecSFhtP7bBFDyORz3t9tkmsU7ScW6eXxMJ5MlKZ92-D9C~A4FNAMtSowp0Jcj66RYcM9vErq~6Rhj3NRRVXRfzV7F-18dJJ7kJSZDnllMa0vVby3vR1Gw__" alt="Tile Image 1">
+                                    <div class="p-4 flex">
+                                    <div class="flex-1 flex flex-col justify-center ">
+                                        <p class="mb-2">Spain Men in Basketball and Footbal action</p>
+                                        <div class="flex justify-start w-5 h-6">
+                                            <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/17375/17375268.png" alt="Sell Icon" class="w-3 h-3 ml-2">
+                                                <span class="italic text-yellow-500 font:2px"> CLUB</span>
+                                            </a>
+                                            </div>
+                                        <div class="flex justify-end">
+                                        <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/992/992700.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                            <span class="italic text-black mx-2"> 3 hrs ago</span>
+                                        </a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- Tile 2 -->
+                                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-72 h-72 ">
+                                    <img class="w-full object-cover" src="https://s3-alpha-sig.figma.com/img/b603/a46a/425459eb705aeab341ae5896b1ff3b8c?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UAkr82yJprLuaGwetckQQo7gjNnj6Y4jAfx6L~aVlCrlBmEX9vIRYPUVfySIZ~k-rCm1RopD0aO4yhphOFoLiBBmPdHJ1pCmY6ZxE8Tbl5fIgnRJdp15oDn1~ZpnuDnUV783iRkQSxiOIHyvm8UrUbGjbfpam9txN3LZVfbSxWeQqc2iCynQ~yB2TRcCphiDI4apql1DH33Iz8G5aUu-QeX-alUu~nWkaMlo6QJiqlNvehiwzxNFPytDMMHjRbLsn-XbOTcKVwTjJhpMi6Qg~CsNJLOgdyfK1NFR86YF20X00EG2nGav3DOtzzTBeY05CGpTSjRIKlqJgqhJwUiwDg__" alt="Tile Image 1">
+                                    <div class="p-4 flex">
+                                        <div class="flex-1 flex flex-col justify-center ">
+                                            <p class="mb-2">Spain Men in Basketball and Footbal action</p>
+                                            <div class="flex justify-start w-5 h-6">
+                                                <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/17375/17375268.png" alt="Sell Icon" class="w-3 h-3 ml-2">
+                                                    <span class="italic text-yellow-500 font:2px"> CLUB</span>
+                                                </a>
+                                                </div>
+                                            <div class="flex justify-end">
+                                            <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/992/992700.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                                <span class="italic text-black mx-2"> 3 hrs ago</span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tile 3 -->
+                                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-72 h-72 ">
+                                    <img class="w-full object-cover" src="https://s3-alpha-sig.figma.com/img/2fc6/4cb8/a8415d3e36fc1fc1cbfeb34792fca6d7?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JDuyta6P0Lej7Nk3Aeip4jeVpFnbckx0NR4Hfd5Oaks9TzhNHQJ9m2bV7kvWGAexTqRTBOVXn7LH-ZGAfSUlkoOK33JMctXsWx-TXgBIN24okENVETJHmPTYa~8PI65UgZQRckwapy1Uy61p~9rVyzNlh7kwvnY-EJI8ttdFnlrn6X65qYO7CzeAXfXQzQ8zCf1OVJbubs0Uh86fb0z6aoQlrXvNttxdrXyBafcnK8gCdmj~MHQ4A9v5vp3RfuXxs5dQ2zqXTucLqqPx2EZTZabHhboXXzkQMioOLKeZOxbBXVIzlRtoVcog-R5-n~V-3PfZ0onvvF42g6iYsiJjRw__" alt="Tile Image 1">
+                                    <div class="p-4 flex">
+                                        <div class="flex-1 flex flex-col justify-center ">
+                                            <p class="mb-2">Spain Men in Basketball and Footbal action</p>
+                                            <div class="flex justify-start w-5 h-6">
+                                                <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/17375/17375268.png" alt="Sell Icon" class="w-3 h-3 ml-2">
+                                                    <span class="italic text-yellow-500 font:2px"> CLUB</span>
+                                                </a>
+                                                </div>
+                                            <div class="flex justify-end">
+                                            <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/992/992700.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                                <span class="italic text-black mx-2"> 3 hrs ago</span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tile 4 -->
+                                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-72 h-72 ">
+                                    <img class="w-full object-cover" src="https://s3-alpha-sig.figma.com/img/484a/0010/dac8e1308c1870036ddb723f38780f08?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OomKMGBVs3iCyHp0dTcZxtp4U6AxnYGKn3ZuKBYXianDV9IFQd86ToAZL0g2wVBFaU4jsLBgQpL~VilUIYIl0lhqDhtFZ~jqLIBF80Cw4xcjETym4bSQ-vf3E247y~TJXoXSb6fe0kzedKpjWMlk8GheyTbAXDFGV7xbOBNDy5YKySXr4365babgeHe9H6Uu4NUNpdhOjN1BvmlfA-8mtJE6t2lDL8p8l10c960BMAthdlI-wKurV~F~1pcks8C2eKgBYbPmt1GzdG9h~LahwZ2dkydUpGmgd3OBvfz87jQGghG2aiU0ehzxo3-kgzlTFDWg17EUjZ7828UI150bHg__" alt="Tile Image 1">
+                                    <div class="p-4 flex">
+                                        <div class="flex-1 flex flex-col justify-center ">
+                                            <p class="mb-2">Spain Men in Basketball and Footbal action</p>
+                                            <div class="flex justify-start w-5 h-6">
+                                                <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/17375/17375268.png" alt="Sell Icon" class="w-3 h-3 ml-2">
+                                                    <span class="italic text-yellow-500 font:2px"> CLUB</span>
+                                                </a>
+                                                </div>
+                                            <div class="flex justify-end">
+                                            <a href="#" class="text-blue-500 hover:underline inline-flex items-center">
+                                                <img src="https://cdn-icons-png.flaticon.com/128/992/992700.png" alt="Sell Icon" class="w-5 h-5 ml-2">
+                                                <span class="italic text-black mx-2"> 3 hrs ago</span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <section class="product flex mt-40 gradient-borderf h-600">
+            <button class="pre-btn"><img src="https://cdn-icons-png.flaticon.com/128/271/271220.png" alt=""></button>
+            <button class="nxt-btn"><img src="https://cdn-icons-png.flaticon.com/128/271/271228.png" alt=""></button>
+            <h1 class="flex justify-center text-xl text-white">PLAYERS</h1>
+            <div class="product-container text-black">
+                <h1 class="flex justify-center text-xl text-white">PLAYERS</h1>
+                <div class="product-card">
+                    <div class="product-image">
+                        
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb">
+                        
+                    </div>
+                    
+
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb">
+                        
+                    </div>
+                    
+
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb">
+                        
+                    </div>
+                    
+
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb">
+                       
+                    </div>
+                    
+
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb">
+                        
+                    </div>
+                   
+
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb">
+                        
+                    </div>
+                   
+
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb">
+                        
+                    </div>
+                   
+
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb">
+                        
+                    </div>
+                    
+
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb">
+                        
+                    </div>
+                   
+
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://s3-alpha-sig.figma.com/img/8336/b07a/56c4b54bd741960ac94d5d2ad409e109?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDAqBytB02wXkmz1YQsnrGRaHPxa1rPMF55D9mJbVoKKUw2icuXBI2bO~4kfUZGcl~DmVWLsa5Q2p8vDy~suhrKE6JZKWpgWciBQTVhcoPL0f1au6HaT5hVshjYpA3Ldo95drZ7EWrAo7nqB8WSkOuI6JkrAeD8DmEHU90V-tQGvMgX4ebNZlv0WaBBldDz8~rV1~0Qkx9rlsHL1Ih8mLDZ5EJsqHrV10oKncYCtKH8jN4jhkesOhcggpo4lH4nVCuQmfVE8wGYY7eSOn9TX497BtvDwp3RqcjDy~lCLM0qOWhbe6I~bZMTzkSR5TFm~hto9DyZwrvJ5NN2w0SuCNQ__" alt="" class="product-thumb ">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col justify-center">
+            <!-- Div with images in a row -->
+            <div class="flex justify-center gap-[8vw] space-x-8 mb-8">
+                <div class="mx-20 flex justify-start">
+                    <img src="https://res.cloudinary.com/dmubfrefi/image/private/s--X0LLoOBX--/c_crop,h_2728,w_4090,x_334,y_0/f_auto/q_auto/v1/dee-about-cms-prod-medias/cf68f541-fc92-4373-91cb-086ae0fe2f88/002-nike-logos-swoosh-white.jpg?_a=BAAAV6Bs" class="w-64 h-36 flex justify-start" alt="Image 1">
+                </div>
+                <div class="mx-20 flex justify-center">
+                    <img src="data:image/png;base64,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" class="w-96 h-36 flex justify-center" alt="Image 2">
+                </div>
+                <div class="mx-20 flex justify-end">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCawzwArDBdFwI9nE_LN_NZmLTqbVQ-z-UNw&s" class="w-64 h-36 flex justify-end rounded-xl" alt="Image 3">
+                </div>
+            </div>
+            <div class="flex w-full gap-[40vw]">
+                <p class="text-xl text-bold">MURANGASEALS@GMAIL.COM</p>
+                <p clas="flex justify-end">+254 790 770982</p>
+            </div>
+
+            
+            <div class="flex justify-between mb-8 bg-yellow-400 rounded-xl">
+                <div class="max-w-4xl mx-auto p-8 flex justify-between items-center bg-yellow-400 shadow-md">
+                    
+                    <div class="text-lg italic font-bold text-gray-800">
+                        Register now so that you don't miss our games
+                    </div>
+                    
+                    
+                    <div class="flex items-center bg-black p-4 rounded-xl">
+                        <input type="text" placeholder="Enter your email" class="bg-black text-yellow-400 p-2  border border-yellow-400 rounded-lg outline-none placeholder-yellow-400 w-96" />
+                        <button class="bg-yellow-400 text-black font-bold py-2 px-4 ml-4">
+                            Subscribe Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Div with Social Media in a row -->
+            <div class="flex justify-center mb-8">
+                <div class="flex-1 flex-col text-center border-b border-yellow-600 gap-[14vw]">
+                    <h3 class="text-xl font-bold mb-4">Social Media</h3>
+                    <div class="flex justify-start">
+                        <ul class="flex items-center gap-[4vw]">
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="#">EVENTS</a></li>
+                            <li><a href="#">BLOGS</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-end space-x-4">
+                        <a href="#" class="text-blue-500 hover:text-blue-700"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670124.png" class="fab fa-facebook-f w-16 h-16"></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-600"><img src="https://cdn-icons-png.flaticon.com/128/3938/3938037.png" class="fab fa-twitter w-16 h-16"></a>
+                        <a href="#" class="text-pink-600 hover:text-pink-800"><img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png" class="fab fa-twitter w-16 h-16"></a>
+                        <a href="#" class="text-red-600 hover:text-red-800"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" class="fab fa-twitter w-16 h-16"></a>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Footer bottom text -->
+            <div class= "text-yellow-600 flex gap-[14vw]">
+                <p class="text-sm flex justify-start">&copy; 2024 Murang'a Seals. All rights reserved.</p>
+                <p class="text-xl flex justify-center">Murang'a Seals</p>
+                <div class="flex justify-end gap-3">
+                    <p class="text-sm flex justify-start">Terms of Service.</p>
+                    <p class="text-sm flex justify-start">Privacy Policy.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  <!-- FontAwesome for social media icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
